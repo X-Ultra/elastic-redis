@@ -131,7 +131,7 @@ func realMain() int {
 func startHTTPService(s *cluster.Server) error {
 	httpServer := http.Server{
 		Addr: httpAddr,
-		Handler: &cluster.RootHandler{s},
+		Handler: &cluster.RootHandler{S:s},
 	}
 
 	go func() {
